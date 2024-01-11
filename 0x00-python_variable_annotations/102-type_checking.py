@@ -3,10 +3,20 @@
 from typing import Union, List, Tuple, Callable, Iterator
 
 
+from typing import Tuple, List, Any
+
+
 def zoom_array(lst: Tuple, factor: int = 2) -> List:
-    """ Return a list """
-    zoomed_in: Callable[[Tuple, int], Iterator[Union[int, str]]] = \
-        lambda lst, factor=2: (
-            item for item in lst for i in range(factor)
-        )
-    return list(zoomed_in(lst, factor))
+    """Corrected annotations"""
+    zoomed_in: List = [
+        item for item in lst
+        for i in range(factor)
+    ]
+    return zoomed_in
+
+
+array = (12, 72, 91)
+
+zoom_2x = zoom_array(array)
+
+zoom_3x = zoom_array(array, 3)typing import List, Union
