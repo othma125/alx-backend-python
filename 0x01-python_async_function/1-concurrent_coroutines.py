@@ -8,7 +8,7 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int = 0, max_delay: int = 10) -> List[float]:
-    """[summary]
+    """
 
     Args:
         n (int, optional): [description]. Defaults to 0.
