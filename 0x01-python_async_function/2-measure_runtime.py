@@ -2,16 +2,17 @@
 """measure_time module
 """
 import asyncio
-measure_time = __import__('2-measure_runtime').measure_time
+import time
+
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_runtime() -> float:
+def measure_runtime(n: int, max_delay: int = 10) -> float:
     """
 
     Returns:
         float: [description]
     """
-    start_time = asyncio.get_event_loop().time()
-    asyncio.run(measure_time())
-    end_time = asyncio.get_event_loop().time()
-    return end_time - start_time
+    start_time = time.time()
+    asyncio.run(wait_n(n, max_delay))
+    return (time.time() - start_time) / n
