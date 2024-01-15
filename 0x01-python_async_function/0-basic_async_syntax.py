@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """[summary]
 """
-import asyncio
-import random
+from asyncio import sleep
+from random import uniform
 
 
 async def wait_random(max_delay: int = 10) -> float:
@@ -14,6 +14,6 @@ async def wait_random(max_delay: int = 10) -> float:
     Returns:
         float: [description]
     """
-    random_delay:float = random.uniform(0, max_delay)
-    await asyncio.sleep(random_delay)
+    random_delay:float = uniform(0, max_delay)
+    await sleep(random_delay)
     return random_delay
