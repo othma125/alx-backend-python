@@ -2,6 +2,7 @@
 """ Async Generator """
 import asyncio
 from random import uniform
+from typing import Generator
 
 
 async def async_generator():
