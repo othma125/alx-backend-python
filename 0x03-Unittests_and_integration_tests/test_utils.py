@@ -25,6 +25,7 @@ class TestAccessNestedMap(TestCase):
         with self.assertRaises(KeyError):
             access_nested_map(nested_map, path=('a', 'b'))
 
+
 class TestGetJson(TestCase):
     """ test get json """
     def test_get_json(self):
@@ -55,6 +56,7 @@ class TestGetJson(TestCase):
             mock_get.assert_called_once_with(test_url)
             self.assertEqual(result, test_payload)
 
+
 class TestMemoize(TestCase):
     """ test memoize """
     def test_memoize(self):
@@ -70,7 +72,8 @@ class TestMemoize(TestCase):
                 """ test property """
                 return self.a_method()
 
-        with mock.patch.object(TestClass, 'a_method', return_value=42) as mock_method:
+        with mock.patch.object(TestClass, 'a_method',
+                               return_value=42) as mock_method:
             test = TestClass()
             test.a_property
             test.a_property
